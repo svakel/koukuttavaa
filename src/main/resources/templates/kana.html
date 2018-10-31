@@ -51,64 +51,83 @@
             </div>
     </nav>
 
-
+    <!--otsikko-->
     <div class="row">
         <div class="col-xs-12 otsikko"><h1>Koukuttavaa kotiruokaa</h1></div>
     </div>
     <div class="row">
-        <div class="col-xs-12"><h2 th:text="${nimi}"></h2></div>
+        <div class="col-xs-12"><h2 th:text="${haku.nimi}"></h2></div>
     </div>
 
 
+    <!--ainesosat-->
     <div class="row">
         <div class="col-xs-12 col-sm-4 col-md-3 ainekset">
-        <p> <span class="tiedot" th:text="${annosmaara}"></span>
-            <span class="tiedot" th:text="${valmistusaika}"></span></p>
+        <p> <span class="tiedot" th:text="${haku.annosmaara}"></span>
+            <span class="tiedot" th:text="${haku.valmistusaika}"></span></p>
 
-           <div class="lista">
-                <ul>
-                    <li th:text="${ainesosat[0]}"></li>
-                    <li th:text="${ainesosat[1]}"></li>
-                    <li th:text="${ainesosat[2]}"></li>
-                    <li th:text="${ainesosat[3]}"></li>
-                    <li th:text="${ainesosat[4]}"></li>
-                    <li th:text="${ainesosat[5]}"></li>
-                    <li th:text="${ainesosat[6]}"></li>
-                    <li th:text="${ainesosat[7]}"></li>
-                    <li th:text="${ainesosat[8]}"></li>
-                </ul>
-            </div>
-            <div class="lista">
-                <h5 th:text="${ainesosat[9]}"></h5>
-                <ul>
-                    <li th:text="${ainesosat[10]}"></li>
-                    <li th:text="${ainesosat[11]}"></li>
-                    <li th:text="${ainesosat[12]}"></li>
-                    <li th:text="${ainesosat[13]}"></li>
-                    <li th:text="${ainesosat[14]}"></li>
-                    <li th:text="${ainesosat[15]}"></li>
-                    <li th:text="${ainesosat[16]}"></li>
-                </ul>
-            </div>
+           <!--<div class="lista">-->
+                <!--<ul>-->
+                    <!--<li th:text="${ainesosat[0]}"></li>-->
+                    <!--<li th:text="${ainesosat[1]}"></li>-->
+                    <!--<li th:text="${ainesosat[2]}"></li>-->
+                    <!--<li th:text="${ainesosat[3]}"></li>-->
+                    <!--<li th:text="${ainesosat[4]}"></li>-->
+                    <!--<li th:text="${ainesosat[5]}"></li>-->
+                    <!--<li th:text="${ainesosat[6]}"></li>-->
+                    <!--<li th:text="${ainesosat[7]}"></li>-->
+                    <!--<li th:text="${ainesosat[8]}"></li>-->
+                <!--</ul>-->
+            <!--</div>-->
+            <!--<div class="lista">-->
+                <!--<h5 th:text="${ainesosat[9]}"></h5>-->
+                <!--<ul>-->
+                    <!--<li th:text="${ainesosat[10]}"></li>-->
+                    <!--<li th:text="${ainesosat[11]}"></li>-->
+                    <!--<li th:text="${ainesosat[12]}"></li>-->
+                    <!--<li th:text="${ainesosat[13]}"></li>-->
+                    <!--<li th:text="${ainesosat[14]}"></li>-->
+                    <!--<li th:text="${ainesosat[15]}"></li>-->
+                    <!--<li th:text="${ainesosat[16]}"></li>-->
+                <!--</ul>-->
+            <!--</div>-->
 
-        </div>
+        <!--</div>-->
 
-        <div class="col-xs-12 col-sm-8 col-md-9 resepti">
+        <!--ohjeet-->
+
+        <!--<div class="col-xs-12 col-sm-8 col-md-9 resepti">-->
 
 
-            <div class="valmistusohje">
-                <ol>
-                    <li th:text="${ohje[0]}"></li>
-                    <li th:text="${ohje[1]}"></li>
-                    <li th:text="${ohje[2]}"></li>
-                    <li th:text="${ohje[3]}"></li>
-                </ol>
-            </div>
+            <!--<div class="valmistusohje">-->
+                <!--<ol>-->
+                    <!--<li th:text="${ohje[0]}"></li>-->
+                    <!--<li th:text="${ohje[1]}"></li>-->
+                    <!--<li th:text="${ohje[2]}"></li>-->
+                    <!--<li th:text="${ohje[3]}"></li>-->
+                <!--</ol>-->
+            <!--</div>-->
 
-        </div>
+        <!--</div>-->
 
     </div>
 
+    <!--kommentit-->
+
+        <div class="row">
+        <div class="col-xs-12 col-sm-4 col-md-3"></div>
+
+            <div class="col-xs-12 col-sm-8 col-md-9">
+                <h4>Kommentit</h4>
+
+
+
+            </div>
+
+        </div>
+
+
+</div>
 </div>
 
 </body>
