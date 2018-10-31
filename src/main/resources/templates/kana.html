@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Koukuttavaa kotiruokaa</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans|Black+Han+Sans|Enriqueta" rel="stylesheet" >
+
+    <!--Tyylitiedosto resources/static/css -hakemistoon, löytyy automaagisesti-->
+    <link rel="stylesheet" href="styles.css" th:href="@{/css/styles.css}"/>
+
+</head>
+
+<body>
+<div class="container-fluid effect">
+
+    <!--navbar-->
+    <nav class="navbar navbar-inverse">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li ><a href="/">Etusivu</a></li>
+                    <li><a href="#">Kasvis</a></li>
+                    <li class="active"><a href="#">Kana</a></li>
+                    <li><a href="#">Kala</a></li>
+                    <li><a href="#">Liha</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><span class="glyphicon glyphicon-user"></span> Rekisteröidy</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Kirjaudu</a></li>
+                </ul>
+            </div>
+    </nav>
+
+
+    <div class="row">
+        <div class="col-xs-12 otsikko"><h1>Koukuttavaa kotiruokaa</h1></div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12"><h2 th:text="${nimi}"></h2></div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-4 col-md-3 ainekset">
+        <p> <span class="tiedot" th:text="${annosmaara}"></span>
+            <span class="tiedot" th:text="${valmistusaika}"></span></p>
+
+           <div class="lista">
+                <ul>
+                    <li th:text="${ainesosat[0]}"></li>
+                    <li th:text="${ainesosat[1]}"></li>
+                    <li th:text="${ainesosat[2]}"></li>
+                    <li th:text="${ainesosat[3]}"></li>
+                    <li th:text="${ainesosat[4]}"></li>
+                    <li th:text="${ainesosat[5]}"></li>
+                    <li th:text="${ainesosat[6]}"></li>
+                    <li th:text="${ainesosat[7]}"></li>
+                    <li th:text="${ainesosat[8]}"></li>
+                </ul>
+            </div>
+            <div class="lista">
+                <h5 th:text="${ainesosat[9]}"></h5>
+                <ul>
+                    <li th:text="${ainesosat[10]}"></li>
+                    <li th:text="${ainesosat[11]}"></li>
+                    <li th:text="${ainesosat[12]}"></li>
+                    <li th:text="${ainesosat[13]}"></li>
+                    <li th:text="${ainesosat[14]}"></li>
+                    <li th:text="${ainesosat[15]}"></li>
+                    <li th:text="${ainesosat[16]}"></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="col-xs-12 col-sm-8 col-md-9 resepti">
+
+
+            <div class="valmistusohje">
+                <ol>
+                    <li th:text="${ohje[0]}"></li>
+                    <li th:text="${ohje[1]}"></li>
+                    <li th:text="${ohje[2]}"></li>
+                    <li th:text="${ohje[3]}"></li>
+                </ol>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

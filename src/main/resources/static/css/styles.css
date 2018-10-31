@@ -1,0 +1,171 @@
+html, body {
+    height:100%;
+}
+
+body{
+    background-color: #EFEFEF;
+    background-image: url('../images/bg3.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Enriqueta', sans-serif;
+}
+
+h1 {
+    font-family: 'Black Han Sans', Arial, sans-serif;
+    font-size: 3.5em;
+    color: #ff9900;
+}
+
+h2 {
+    font-family: 'Enriqueta', Arial, sans-serif;
+    font-size: 2.5em;
+    color: #e68a00;
+}
+
+h2.keskitys{
+    text-align: center;
+}
+
+h4 {
+    font-family: 'Enriqueta', Arial, sans-serif;
+    font-size: 1.6em;
+    color: #cf1842;
+}
+
+h5 {
+    font-family: 'Enriqueta', Arial, sans-serif;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #000;
+}
+
+
+p {
+    font-size: 1.2em;
+}
+
+.tiedot{
+    font-weight: bold;
+}
+
+.nav{
+    font-family: 'Arimo', Arial, sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+
+.container-fluid{
+    width: 70%;
+    background:#FFF;
+    min-height: 100%;
+    padding-bottom: 20px;
+}
+
+.paakuvat{
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+}
+
+.kuvalaatikko{
+    margin:10px;
+}
+
+.paakuvat img{
+    width: 100%;
+    height: auto;
+    display:block;
+}
+
+.kuvavalikko{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: white;
+}
+
+.otsikko{
+    text-align: center;
+}
+
+.ainekset{
+    background-color: white;
+}
+
+.resepti{
+}
+
+.lista ul{
+    margin:0;
+    padding:0;
+    list-style-type: none;
+    font-family: 'Enriqueta', Arial, sans-serif;
+}
+
+.reseptilista > ul{
+    margin:0;
+    padding:0;
+    list-style-type: none;
+}
+
+.reseptilista a{
+    font-family: 'Enriqueta', Arial, sans-serif;
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #394d00;
+}
+
+.valmistusohje ol{
+    margin-left:10px;
+    padding: 0;
+    margin-top: 5px;
+    font-size: 1.2em;
+}
+
+.valmistusohje li{
+    padding-bottom: 10px;
+}
+
+
+.effect
+{
+    position:relative;
+    -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+.effect:before, .effect:after
+{
+    content:"";
+    position:absolute;
+    z-index:-1;
+    -webkit-box-shadow:0 0 20px rgba(0,0,0,0.8);
+    -moz-box-shadow:0 0 20px rgba(0,0,0,0.8);
+    box-shadow:0 0 20px rgba(0,0,0,0.8);
+    top:10px;
+    bottom:10px;
+    left:0;
+    right:0;
+    -moz-border-radius:100px / 10px;
+    border-radius:100px / 10px;
+}
+.effect:after
+{
+    right:10px;
+    left:auto;
+    -webkit-transform:skew(8deg) rotate(3deg);
+    -moz-transform:skew(8deg) rotate(3deg);
+    -ms-transform:skew(8deg) rotate(3deg);
+    -o-transform:skew(8deg) rotate(3deg);
+    transform:skew(8deg) rotate(3deg);
+}
+
+
+@media screen and (max-width: 576px) {
+    .container-fluid {
+        width: 95%;
+    }
+}
