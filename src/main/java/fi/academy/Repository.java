@@ -7,4 +7,8 @@ public interface Repository extends CrudRepository<Resepti, String> {
 
     Resepti findReseptiByNimiContains(String haku);
 
+    Iterable<Resepti> findReseptiByReseptikategoriaContains(String kategoria);
+
 }
+
+

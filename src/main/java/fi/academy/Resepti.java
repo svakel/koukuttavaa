@@ -15,6 +15,10 @@ public class Resepti {
     private String nimi;
     private String annosmaara;
     private String valmistusaika;
+
+
+
+    private String kuvatiedosto;
     private List ainesosalista = new ArrayList<String>();
     private List ohje = new ArrayList<String>();
     private List reseptikategoria = new ArrayList<String>();
@@ -83,5 +87,13 @@ public class Resepti {
     }
     public void setCode(String code) {
         this.code = code;
+    }
+
+    public String getKuvatiedosto() {
+        return kuvatiedosto;
+    }
+
+    public void setKuvatiedosto(String kuvatiedosto) {
+        this.kuvatiedosto = kuvatiedosto;
     }
 }

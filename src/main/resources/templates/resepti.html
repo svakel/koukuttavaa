@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Koukuttavaa kotiruokaa</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans|Black+Han+Sans|Enriqueta" rel="stylesheet">
+
+    <!--Tyylitiedosto resources/static/css -hakemistoon, löytyy automaagisesti-->
+    <link rel="stylesheet" href="styles.css" th:href="@{/css/styles.css}"/>
+
+</head>
+
+<body>
+<div class="container-fluid effect">
+
+    <!--navbar-->
+    <nav class="navbar navbar-inverse">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li><a href="/">Etusivu</a></li>
+                <li><a href="/kasvis">Kasvis</a></li>
+                <li><a href="/kana">Kana</a></li>
+                <li><a href="/kala">Kala</a></li>
+                <li><a href="/liha">Liha</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Rekisteröidy</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Kirjaudu</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!--otsikko-->
+    <div class="row">
+        <div class="col-xs-12 otsikko"><h1>Koukuttavaa kotiruokaa</h1></div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12"><h2 th:text="${haku.nimi}"></h2></div>
+    </div>
+
+
+    <!--ainesosat-->
+    <div class="row">
+        <div class="col-xs-12 col-sm-4 col-md-3 ainekset">
+            <p><span class="tiedot" th:text="${haku.annosmaara}"></span>
+                <span class="tiedot" th:text="${haku.valmistusaika}"></span></p>
+
+
+
+            <div class="lista" th:each="aine:${haku.ainesosalista}">
+                <ul>
+                    <li th:text="${aine}"></li>
+                </ul>
+            </div>
+        </div>
+
+        <!--ohjeet-->
+
+        <div class="col-xs-12 col-sm-8 col-md-9 resepti">
+
+
+            <div class="valmistusohje" >
+                <ol>
+                    <div th:each="ohjeteksti:${haku.ohje}">
+                        <li th:text="${ohjeteksti}"></li>
+                    </div>
+                </ol>
+            </div>
+
+        </div>
+
+
+
+
+        <!--    <div class="lista">
+                <ul>
+                    <li th:text="${haku.ainesosalista[0]}"></li>
+                    <li th:text="${haku.ainesosalista[1]}"></li>
+                    <li th:text="${haku.ainesosalista[2]}"></li>
+                    <li th:text="${haku.ainesosalista[3]}"></li>
+                </ul>
+            </div>
+
+        </div>
+
+
+    <div class="col-xs-12 col-sm-8 col-md-9 resepti">-->
+
+         <!--   <div class="valmistusohje">
+                <ol>
+                    <li th:text="${haku.ohje[0]}"></li>
+                    <li th:text="${haku.ohje[1]}"></li>
+                    <li th:text="${haku.ohje[2]}"></li>
+
+                </ol>
+            </div>-->
+
+    </div>
+
+
+
+
+
+
+    <!--kommentit-->
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-4 col-md-3"></div>
+
+
+        <div class="col-xs-12 col-sm-8 col-md-9">
+
+            <hr>
+
+            <h5>Kommentit</h5>
+
+
+                <form th:action="@{/lomakekasittelija}" th:method="post"
+                      th:object="${lomake}">
+
+
+                    <div class="well">
+                        <div class="form-group">
+
+                            <div>
+                                <label class="control-label col-sm-2" for="kirjoittaja">Nimi:</label>
+                                <input class="form-control input-sm" type="text" id="kirjoittaja" th:field="*{kirjoittaja}"/>
+                                <input class="form-control input-sm piilotettu" type="text" id="nimiCode" name="nimiCode" th:value="${haku.nimi}"/>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <input type="text" id="kommentti" class="form-control input-md chat-input" name="kommentti"
+                                   th:value="*{kommentti}"
+                                   placeholder="Kirjoita teksti tähän..."/>
+
+                            <button id="kommentti_painike" type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-comment"></span><span class="painike_teksti">Lisää kommentti</span></button>
+
+                        </div>
+
+
+                    </div>
+
+                </form>
+
+
+                <hr data-brackets-id="12673">
+
+                <!--  <div th:each="kommentti : ${maat}">
+                      <strong class="pull-left primary-font" th:text="${kommentti.kirjoittaja}"></strong>
+                      <li class="ui-state-default" th:text="${kommentti.kommentti}"></li>
+
+                  </div>-->
+
+
+                <ul data-brackets-id="12674" id="sortable" class="list-unstyled ui-sortable"
+                    th:each="kommentti : ${maat}">
+
+                    <strong class="pull-left primary-font" th:text="${kommentti.kirjoittaja}"></strong>
+                    <small class="pull-right text-muted">
+                        <span class="glyphicon glyphicon-time"></span>7 mins ago
+                    </small>
+                    </br>
+                    <li class="ui-state-default" th:text="${kommentti.kommentti}"></li>
+                    <hr>
+                </ul>
+
+            </div>
+
+
+            <!--    <div th:each="kommentti : ${maat}">
+                    <p th:text="${kommentti.kirjoittaja}"></p>
+                    <p th:text="${kommentti.kommentti}"></p>
+
+                </div>-->
+
+
+        </div>
+
+    </div>
+
+
+</div>
+</div>
+
+
+
+</body>
+</html>
